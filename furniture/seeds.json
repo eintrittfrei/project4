@@ -1,0 +1,38 @@
+[
+{
+  "model": "furniture.show",
+  "pk": 1,
+  "fields": {
+    "name": "Stacking Chair",
+    "image": "chair.jpg",
+    "year": 1960,
+    "designer": "Verner Panton",
+    "color": "Multiple",
+    "description": "The groundbreaking first single-form, single-material injection-molded chair that even stacks"
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 2,
+  "fields": {
+    "name": "Arm Chair",
+    "image": "chair.jpg",
+    "year": 1966,
+    "designer": "Warren Platner",
+    "color": "Black/silver",
+    "description": "Based on a period Louis XV-style chair."
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 3,
+  "fields": {
+    "name": "Egg",
+    "image": "chair.jpg",
+    "year": 1958,
+    "designer": "Arne Jacobsen",
+    "color": "black",
+    "description": "Jacobsen designed the Egg specifically for the SAS Royal hotel in Copenhagen."
+  }
+}
+]
