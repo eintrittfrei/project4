@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('furniture/', include('furniture.urls')),
     path('type/', include('type.urls')),
-    path('room/', include('room.urls'))
+    path('room/', include('rooms.urls')),
+    path('auth/', include('jwt_auth.urls')),
 ]

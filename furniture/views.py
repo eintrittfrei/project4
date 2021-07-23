@@ -14,7 +14,7 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 class ShowListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
-    
+     
     def get(self, _request):
         furniture = Show.objects.all()
         serialized_furniture = PopulatedShowSerializer(furniture, many=True)
