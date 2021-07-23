@@ -9,7 +9,13 @@ class Comment(models.Model):
       'furniture.Show',
       related_name='comments',
       on_delete = models.CASCADE
-      
+    )
+    owner = models.ForeignKey(
+      "jwt_auth.User",
+      related_name="comments",
+      on_delete = models.CASCADE
     )
 
-   
+    def __str__(self):
+        return f"Comments: {self.text}"
+        

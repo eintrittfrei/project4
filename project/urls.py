@@ -22,4 +22,5 @@ urlpatterns = [
     path('type/', include('type.urls')),
     path('room/', include('rooms.urls')),
     path('auth/', include('jwt_auth.urls')),
+    path('comments/', include('comments.urls'))
 ]
