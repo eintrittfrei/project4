@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'furniture',
     'comments',
     'type',
+    'rooms',
 ]
 
 MIDDLEWARE = [

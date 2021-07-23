@@ -1,0 +1,58 @@
+[
+{
+  "model": "rooms.room",
+  "pk": 1,
+  "fields": {
+    "name": "Bathroom"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 2,
+  "fields": {
+    "name": "Lounge"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 3,
+  "fields": {
+    "name": "Kitchen"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 4,
+  "fields": {
+    "name": "Bedroom"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 5,
+  "fields": {
+    "name": "Kids"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 6,
+  "fields": {
+    "name": "Dining"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 7,
+  "fields": {
+    "name": "Garden"
+  }
+},
+{
+  "model": "rooms.room",
+  "pk": 8,
+  "fields": {
+    "name": "Hallway"
+  }
+}
+]

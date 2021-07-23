@@ -10,6 +10,7 @@ class Show(models.Model):
     color = models.CharField(max_length=50, default=None)
     description = models.CharField(max_length=100, default=None)
     type = models.ManyToManyField("type.Type", related_name="furniture")
+    room = models.ManyToManyField('rooms.Room', related_name="furniture")
 
     def __str__(self):
         return f"{self.name} - {self.year}"

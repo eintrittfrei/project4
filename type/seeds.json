@@ -1,0 +1,44 @@
+[
+{
+  "model": "type.type",
+  "pk": 1,
+  "fields": {
+    "name": "seating"
+  }
+},
+{
+  "model": "type.type",
+  "pk": 2,
+  "fields": {
+    "name": "tables"
+  }
+},
+{
+  "model": "type.type",
+  "pk": 3,
+  "fields": {
+    "name": "lamps"
+  }
+},
+{
+  "model": "type.type",
+  "pk": 4,
+  "fields": {
+    "name": "sofas"
+  }
+},
+{
+  "model": "type.type",
+  "pk": 5,
+  "fields": {
+    "name": "storage"
+  }
+},
+{
+  "model": "type.type",
+  "pk": 6,
+  "fields": {
+    "name": "other"
+  }
+}
+]

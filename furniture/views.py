@@ -8,10 +8,13 @@ from .models import Show
 from .common import ShowSerializer
 from .populated import PopulatedShowSerializer
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+ 
 # Create your views here.
 
 class ShowListView(APIView):
-
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    
     def get(self, _request):
         furniture = Show.objects.all()
         serialized_furniture = PopulatedShowSerializer(furniture, many=True)
