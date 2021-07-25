@@ -39,7 +39,7 @@ const Register = () => {
     event.preventDefault()
     try {
       await axios.post('/api/auth/register/', formdata)
-      history.push('/login/')
+      
     } catch (err) {
       setErrors(err.response.data)
     }
