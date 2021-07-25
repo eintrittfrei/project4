@@ -3,10 +3,13 @@ import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button' 
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 
 
 
 const Register = () => {
+  const history = useHistory()
+  console.log('history', history)
   const [formdata, setFormData] = useState({
     username: '',
     email: '',
@@ -16,6 +19,16 @@ const Register = () => {
     last_name: '',
     profile_image: '',
   })
+  const [errors, setErrors] = useState({
+    username: '',
+    email: '',
+    password: '',
+    password_confirmation: '',
+    first_name: '',
+    last_name: '',
+    profile_image: '',
+  })
+
 
   const handleChange = (event) => {
     const newFormdata = { ...formdata, [event.target.name]: event.target.value }
@@ -26,19 +39,23 @@ const Register = () => {
     event.preventDefault()
     try {
       await axios.post('/api/auth/register/', formdata)
-
+      history.push('/login/')
     } catch (err) {
-      console.log(err)
+      setErrors(err.response.data)
     }
+    setFormData({
+      username: '',
+      email: '',
+      password: '',
+      password_confirmation: '',
+      first_name: '',
+      last_name: '',
+      profile_image: '',
+    })
+    
   }
-
-
-
-
-
-
-
   
+
   return (
     <>
       <Container>
@@ -46,13 +63,19 @@ const Register = () => {
           <Form.Group className="mb-3" controlId="formBasicUsername">
             <Form.Label>Username</Form.Label>
             <Form.Control 
+              // className={`input ${errors.username ? 'danger' : ''}`}
               type="text" 
               placeholder="Enter username" 
               name="username" 
               value={formdata.username}
               onChange={handleChange} />
+            <Form.Text className="text-muted">
+              {errors.username && <p>{errors.username}</p>}
+            </Form.Text>
+            
+            
           </Form.Group>
-
+          
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control 
@@ -61,6 +84,9 @@ const Register = () => {
               name="email" 
               value={formdata.email}
               onChange={handleChange} />
+            <Form.Text className="text-muted">
+              {errors.email && <p>{errors.email}</p>}
+            </Form.Text>
           </Form.Group>
         
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -71,6 +97,9 @@ const Register = () => {
               name="password" 
               value={formdata.password}
               onChange={handleChange} />
+            <Form.Text className="text-muted">
+              {errors.password && <p>{errors.password}</p>}
+            </Form.Text>
           </Form.Group>
         
           <Form.Group className="mb-3" controlId="formBasicPasswordConfirmation">
@@ -81,6 +110,9 @@ const Register = () => {
               name="password_confirmation" 
               value={formdata.password_confirmation}
               onChange={handleChange} />
+            <Form.Text className="text-muted">
+              {errors.password_confirmation && <p>{errors.password_confirmation}</p>}
+            </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicFirstName">
@@ -91,6 +123,9 @@ const Register = () => {
               name="first_name" 
               value={formdata.first_name}
               onChange={handleChange} />
+            <Form.Text className="text-muted">
+              {errors.first_name && <p>{errors.first_name}</p>}
+            </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicLastName">
@@ -101,6 +136,9 @@ const Register = () => {
               name="last_name" 
               value={formdata.last_name}
               onChange={handleChange} />
+            <Form.Text className="text-muted">
+              {errors.last_name && <p>{errors.last_name}</p>}
+            </Form.Text>
           </Form.Group>
 
           <Form.Group controlId="formFile" className="mb-3">
