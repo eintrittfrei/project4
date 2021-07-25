@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button' 
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
+import { ImageUploadField } from '../imageUpload'
 
 
 
@@ -55,6 +56,9 @@ const Register = () => {
     
   }
   
+  const handleImageUrl = url => {
+    setFormData({ ...formdata, image: url })
+  }
 
   return (
     <>
@@ -140,15 +144,18 @@ const Register = () => {
               {errors.last_name && <p>{errors.last_name}</p>}
             </Form.Text>
           </Form.Group>
-
-          <Form.Group controlId="formFile" className="mb-3">
+          <ImageUploadField
+            value={formdata.image}
+            name="profile_image"
+            handleImageUrl={handleImageUrl} />
+          {/* <Form.Group controlId="formFile" className="mb-3">
             <Form.Label>Profile picture</Form.Label>
             <Form.Control 
               type="file" 
               name="profile_image" 
               value={formdata.profile_image}
               onChange={handleChange} />
-          </Form.Group>
+          </Form.Group> */}
           <Button type="submit" variant="dark">Register</Button>{' '}
         </Form>
       </Container>

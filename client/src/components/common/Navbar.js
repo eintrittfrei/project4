@@ -1,15 +1,22 @@
-import React from 'react' 
+import React, { useEffect } from 'react' 
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { getPayload } from '../../helpers/auth/functions'
 
 
 
 const NavBar = () => {
-  const history = useHistory() 
+  const history = useHistory()
+  const location = useLocation()
+  console.log('location', location)
+
+  useEffect(() => {
+
+  },[location.pathname])
+
   
 
   const handleLogout = () => {
