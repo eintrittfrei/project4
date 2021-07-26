@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react' 
 import axios from 'axios'
+import Container from 'react-bootstrap/esm/Container'
+import FurnitureCard from './furnitureCard'
 
 
 
@@ -10,7 +12,7 @@ const FurnitureIndex = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get('/api/furniture')
-        setFurniture('data💽', data)
+        setFurniture(data)
       } catch (err) {
         console.log(err)
       }
@@ -18,12 +20,24 @@ const FurnitureIndex = () => {
     getData()
   }, [])
 
-  console.log('furniture🪑', furniture)
+  // console.log('furniture on state🪑', furniture)
 
-
+  
 
   return (
-    <h3>Index</h3>
+    
+    <Container fluid>
+    
+      
+           
+      {furniture.map(piece =>{
+        
+        return <FurnitureCard key={piece.id} {...piece} />
+        
+      }) }
+      
+      
+    </Container>
   )
 
 

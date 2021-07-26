@@ -7,6 +7,7 @@ import Register from './helpers/auth/Register'
 import Login from './helpers/auth/Login'
 import About from './components/common/About'
 import FurnitureIndex from './components/furniture/furnitureIndex'
+import FurnitureShow from './components/furniture/furnitureShow'
 
 
 const App = () => {
@@ -33,10 +34,11 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         <Switch>
+          <Route path='/furniture/:id/' component={FurnitureShow} />
+          <Route path='/furniture' component={FurnitureIndex} />
           <Route path='/about' component={About} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />
-          <Route path='/index' component={FurnitureIndex} />
           <Route path='/' component={Home} />
         </Switch>
       </BrowserRouter>
