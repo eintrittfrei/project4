@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react' 
 import axios from 'axios'
 import Container from 'react-bootstrap/esm/Container'
-import FurnitureCard from './furnitureCard'
+import FurnitureCard from './FurnitureCard'
 
 
 

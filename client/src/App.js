@@ -6,8 +6,9 @@ import NavBar from './components/common/Navbar'
 import Register from './helpers/auth/Register'
 import Login from './helpers/auth/Login'
 import About from './components/common/About'
-import FurnitureIndex from './components/furniture/furnitureIndex'
-import FurnitureShow from './components/furniture/furnitureShow'
+import FurnitureIndex from './components/furniture/FurnitureIndex'
+import FurnitureShow from './components/furniture/FurnitureShow'
+import NewFurniture from './components/user/NewPiece'
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
         <Switch>
           <Route path='/furniture/:id/' component={FurnitureShow} />
           <Route path='/furniture' component={FurnitureIndex} />
+          <Route path='/new' component={NewFurniture} />
           <Route path='/about' component={About} />
           <Route path='/login' component={Login} />
           <Route path='/register' component={Register} />

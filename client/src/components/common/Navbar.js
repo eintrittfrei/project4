@@ -49,7 +49,11 @@ const NavBar = () => {
                   <Nav.Link href="/register">Register</Nav.Link>
                   <Nav.Link href="/login">Login</Nav.Link>
                 </> :
-                <Button onClick={handleLogout} variant="dark">Log Out</Button>
+                <>
+                  <Nav.Link href="/new">Add new furniture</Nav.Link>
+                  <Button onClick={handleLogout} variant="dark">Log Out</Button>
+                </>
+
               }
             </Nav>
           </Navbar.Collapse>
