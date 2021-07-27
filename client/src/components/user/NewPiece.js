@@ -1,12 +1,33 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../../helpers/auth/functions'
+import Select from 'react-select'
 
+const selectOptions = [
+  { value: 5, label: 'Tables' },
+  { value: 3, label: 'Sofas' },
+  { value: 6, label: 'seating' },
+  { value: 4, label: 'Lamps' },
+  { value: 2, label: 'Storage' },
+  { value: 1, label: 'Other' }
+]
+const selectOptionsRoom = [
+  { value: 1, label: 'Hallway' },
+  { value: 2, label: 'Garden' },
+  { value: 3, label: 'Dining' },
+  { value: 4, label: 'Kids' },
+  { value: 5, label: 'Bedroom' },
+  { value: 6, label: 'Kitchen' },
+  { value: 7, label: 'Lounge' },
+  { value: 8, label: 'Bathroom' }
+]
 
 const NewFurniture = () => {
+  const history = useHistory()
   const [formdata, setFormData] = useState({
     name: '',
     image: '',
@@ -20,6 +41,7 @@ const NewFurniture = () => {
 
   const handleChange = (event) => {
     const newPiece = { ...formdata, [event.target.name]: event.target.value }
+    console.log('type', event.target.type)
     setFormData(newPiece)
   }
   console.log('formdata', formdata)
@@ -32,11 +54,15 @@ const NewFurniture = () => {
           headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
         } 
       )
-      console.log('headers', formdata)
+      history.push('furniture')
     } catch (err) {
       console.log(err)
     }
+  }
 
+  const handleMultiChange = (selected, name) => {
+    const values = selected ? selected.map(item => item.value) : []
+    setFormData({ ...formdata, [name]: [...values] })
   }
  
   return (
@@ -106,35 +132,21 @@ const NewFurniture = () => {
 
         </Form.Group>
         <Form.Label>Type</Form.Label>
-        <Form.Select 
-          multiple aria-label="select_type"
-          onChange={handleChange}
+        <Select 
+          options={selectOptions}
+          isMulti
           name="type"
-          value={formdata.type} 
-        >
-          <option value="seating">seating</option>
-          <option value="tables">tables</option>
-          <option value="sofas">sofas</option>
-          <option value="storage">storage</option>
-          <option value="other">other</option>
-        </Form.Select>
+          onChange={(selected) => handleMultiChange(selected, 'type')}
+        />
+        
         <br />
         <Form.Label>Room</Form.Label>
-        <Form.Select 
-          multiple aria-label="Default select example"
-          onChange={handleChange}
+        <Select 
+          options={selectOptionsRoom}
+          isMulti
           name="room"
-          value={formdata.room}   
-        >
-          <option value="Hallway">Hallway</option>
-          <option value="Garden">Garden</option>
-          <option value="Dining">Dining</option>
-          <option value="Kids">Kids</option>
-          <option value="Bedroom">Bedroom</option>
-          <option value="Kitchen">Kitchen</option>
-          <option value="Lounge">Lounge</option>
-          <option value="Bathroom">Bathroom</option>
-        </Form.Select>
+          onChange={(selected) => handleMultiChange(selected, 'room')}
+        />
         <br />
         <Form.Group controlId="formFile" className="mb-3">
           <Form.Label>Image</Form.Label>

@@ -9,6 +9,7 @@ import About from './components/common/About'
 import FurnitureIndex from './components/furniture/FurnitureIndex'
 import FurnitureShow from './components/furniture/FurnitureShow'
 import NewFurniture from './components/user/NewPiece'
+import Edit from './components/user/EditPiece'
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         <Switch>
+          <Route path='/furniture/:id/edit/' component={Edit} />
           <Route path='/furniture/:id/' component={FurnitureShow} />
           <Route path='/furniture' component={FurnitureIndex} />
           <Route path='/new' component={NewFurniture} />

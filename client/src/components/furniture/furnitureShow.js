@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react' 
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import ListGroup from 'react-bootstrap/ListGroup'
+import Button from 'react-bootstrap/Button'
+import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functions'
+
 
 
 
@@ -11,18 +14,38 @@ import ListGroup from 'react-bootstrap/ListGroup'
 const FurnitureShow = () => {
   const [onepiece, setOnePiece] = useState({})
   const { id } = useParams()
-  console.log('PARAMS', id)
+  const history = useHistory()
 
   useEffect(() => {
     const getData = async () => {
       const { data } = await axios.get(`/api/furniture/${id}`)
       setOnePiece(data)
+      console.log('DATA', data)
     }
     getData()
   }, [id])
 
   console.log(onepiece)
 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`/api/furniture/${id}`, { 
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        },
+      })
+      history.push(('/furniture'))
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  const userIsOwner = (userId) => {
+    const payload = getPayload()
+    if (!payload) return false
+    return userId === payload.sub
+  
+  }
+  userIsOwner()
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -39,8 +62,12 @@ const FurnitureShow = () => {
         <ListGroupItem>Color: {onepiece.color}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        <Card.Link href="#">Edit</Card.Link>
-        <Card.Link href="#">Delete</Card.Link>
+        {/* {userIsOwner(onepiece.owner._id) && */}
+        <>
+          <Button onClick={handleDelete} variant="dark">Delete</Button>
+          <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
+        </>
+        {/* } */}
       </Card.Body>
     </Card>
 
