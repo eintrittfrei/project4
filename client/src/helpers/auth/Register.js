@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button' 
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-import { ImageUploadField } from '../imageUpload'
+// import { ImageUploadField } from '../imageUpload'
 import Col from 'react-bootstrap/Col'
 
 
@@ -42,7 +42,7 @@ const Register = () => {
     event.preventDefault()
     try {
       await axios.post('/api/auth/register/', formdata)
-      
+      history.push('/login')
     } catch (err) {
       setErrors(err.response.data)
     }
@@ -58,9 +58,9 @@ const Register = () => {
     
   }
   
-  const handleImageUrl = url => {
-    setFormData({ ...formdata, image: url })
-  }
+  // const handleImageUrl = url => {
+  //   setFormData({ ...formdata, image: url })
+  // }
 
   return (
     <>
@@ -147,7 +147,15 @@ const Register = () => {
                 {errors.last_name && <p>{errors.last_name}</p>}
               </Form.Text>
             </Form.Group>
-            <ImageUploadField
+            <Form.Group controlId="formFile" className="mb-3">
+              <Form.Label>Image</Form.Label>
+              <Form.Control 
+                type="file" 
+                name="profile_image" 
+                value={formdata.image}
+                onChange={handleChange} />
+            </Form.Group>
+            {/* <ImageUploadField
               value={formdata.image}
               name="profile_image"
               handleImageUrl={handleImageUrl} />
@@ -158,7 +166,7 @@ const Register = () => {
               name="profile_image" 
               value={formdata.profile_image}
               onChange={handleChange} />
-          </Form.Group> */}
+          </Form.Group> */} 
             <Button type="submit" variant="dark">Register</Button>{' '}
           </Form>
         </Container>

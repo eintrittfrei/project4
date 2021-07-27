@@ -11,7 +11,7 @@ import { getPayload } from '../../helpers/auth/functions'
 const NavBar = () => {
   const history = useHistory()
   const location = useLocation()
-  console.log('location', location)
+  // console.log('location', location)
 
   useEffect(() => {
 
@@ -32,7 +32,7 @@ const NavBar = () => {
     const currentTime = Math.round(Date.now() / 1000) // as its millisconds devide by 1k as here 
     return currentTime < payload.exp // will return true or false booloean 
   }
-  console.log(userIsAuthenticated())
+  // console.log(userIsAuthenticated())
 
 
   return (

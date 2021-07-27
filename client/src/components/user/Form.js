@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button' 
 import Select from 'react-select'
+import ImageUploadField from '../../helpers/ImageUploader'
+
 
 const EditForm = ({ 
   formdata, 
@@ -10,7 +12,9 @@ const EditForm = ({
   handleSubmit, 
   selectOptions, 
   selectOptionsRoom, 
-  handleMultiChange }) => {
+  handleMultiChange,
+  handleImageUrl,
+}) => {
 
 
   return (
@@ -97,14 +101,19 @@ const EditForm = ({
           onChange={(selected) => handleMultiChange(selected, 'room')}
         />
         <br />
-        <Form.Group controlId="formFile" className="mb-3">
+        <ImageUploadField 
+          value={formdata.image}
+          name="image"
+          handleImageUrl={handleImageUrl}
+        />
+        {/* <Form.Group controlId="formFile" className="mb-3">
           <Form.Label>Image</Form.Label>
           <Form.Control 
             type="file" 
             name="image" 
             value={formdata.image}
             onChange={handleChange} />
-        </Form.Group>
+        </Form.Group> */}
 
         <Button variant="primary" type="submit">
       Submit

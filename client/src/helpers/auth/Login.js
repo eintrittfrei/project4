@@ -28,7 +28,7 @@ const Login = () => {
     try {
       const { data } = await axios.post('/api/auth/login/', formdata)
       setTokenToLocalStorage(data.token)
-      history.push('/index/')
+      history.push('/furniture/')
       console.log('res', data)
     } catch (err) {
       console.log(err)

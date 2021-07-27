@@ -13,7 +13,7 @@ import Edit from './components/user/EditPiece'
 
 
 const App = () => {
-  //  const [furniture, setFurniture] = useState([])
+  
 
   useEffect(() => {
     const getData = async () => {

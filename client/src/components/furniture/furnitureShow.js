@@ -13,8 +13,11 @@ import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functio
 
 const FurnitureShow = () => {
   const [onepiece, setOnePiece] = useState({})
+  
   const { id } = useParams()
   const history = useHistory()
+
+
 
   useEffect(() => {
     const getData = async () => {
@@ -39,13 +42,13 @@ const FurnitureShow = () => {
       console.log(err)
     }
   }
-  const userIsOwner = (userId) => {
+  const userIsOwner = () => {
     const payload = getPayload()
     if (!payload) return false
-    return userId === payload.sub
+    return payload.sub
   
   }
-  userIsOwner()
+  // userIsOwner()
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -59,17 +62,43 @@ const FurnitureShow = () => {
       <ListGroup className="list-group-flush">
         <ListGroupItem>Year: {onepiece.year}</ListGroupItem>
         <ListGroupItem>Designer: {onepiece.designer}</ListGroupItem>
+        
         <ListGroupItem>Color: {onepiece.color}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        {/* {userIsOwner(onepiece.owner._id) && */}
-        <>
-          <Button onClick={handleDelete} variant="dark">Delete</Button>
-          <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
-        </>
-        {/* } */}
+        {userIsOwner === onepiece.owner ?
+          <>
+            <Button onClick={handleDelete} variant="dark">Delete</Button>
+            <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
+        
+          </>
+          :
+          <></>
+        }
       </Card.Body>
+      <div><p>Comments</p>
+      
+        { onepiece.comments && 
+        <div>
+
+          {
+            onepiece.comments.map(item => {
+              return (
+                <div key={item.id}>
+                  <p>{item.text}</p>
+                  <p>{item.owner.username}</p>
+                  <p>{item.created_at}</p>
+                </div>
+              )
+            })
+          }
+        </div>
+        }
+      </div>
     </Card>
+        
+       
+        
 
 
 

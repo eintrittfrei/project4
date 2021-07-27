@@ -39,10 +39,10 @@ const NewFurniture = () => {
 
   const handleChange = (event) => {
     const newPiece = { ...formdata, [event.target.name]: event.target.value }
-    console.log('type', event.target.type)
+    
     setFormData(newPiece)
   }
-  console.log('formdata', formdata)
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -62,6 +62,10 @@ const NewFurniture = () => {
     const values = selected ? selected.map(item => item.value) : []
     setFormData({ ...formdata, [name]: [...values] })
   }
+
+  const handleImageUrl = (url) => {
+    setFormData({ ...formdata, image: url })
+  }
  
   return (
     <Container>
@@ -72,6 +76,7 @@ const NewFurniture = () => {
         handleMultiChange={handleMultiChange}
         selectOptions={selectOptions}
         selectOptionsRoom={selectOptionsRoom}
+        handleImageUrl={handleImageUrl}
       />
     </Container>
 
