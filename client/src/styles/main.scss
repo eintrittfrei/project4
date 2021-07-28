@@ -1,1 +1,77 @@
 
+// Nav style
+
+
+nav{
+  div.container {
+    margin: 0;
+    padding-left: 0;
+  }
+  .bg-light {
+    background-color: none;
+  }
+  button.navbar-toggler.collapsed {
+    border: none;
+  }
+  
+  
+}
+.navbar-light .navbar-toggler:focus {
+  box-shadow:none;
+  border: none;
+}
+.navbar-light .navbar-toggler {
+  box-shadow:none;
+  border: none;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+// header
+
+div.header.container {
+  margin: 0;
+  margin-top: -40px;
+  font-size: 600%;
+  padding: 0;
+}
+
+// Card style 
+
+div.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  justify-content: center;
+  
+  div.row {
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+  }
+  .row {
+    margin: 0;
+    --bs-gutter-x: 0rem;
+  }
+  div.card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2px;
+    
+  }
+  .card {
+  border-radius: 0;
+  border: none;
+  background-color:rgb(246, 248, 250);
+  }
+  img {
+    object-fit: cover;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

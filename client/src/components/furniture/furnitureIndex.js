@@ -25,19 +25,21 @@ const FurnitureIndex = () => {
   
 
   return (
-    
-    <Container fluid>
+    <>
+      <Container className="header">furniture</Container>
+      <Container fluid>
     
       
            
-      {furniture.map(piece =>{
+        {furniture.map(piece =>{
         
-        return <FurnitureCard key={piece.id} {...piece} />
+          return <FurnitureCard key={piece.id} {...piece} />
         
-      }) }
+        }) }
       
       
-    </Container>
+      </Container>
+    </>
   )
 
 

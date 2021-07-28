@@ -58,29 +58,34 @@ const NavBar = () => {
   
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="transparent" variant="light" expand="lg">
         <Container>
-          <Navbar.Brand href="/furniture">Furniture</Navbar.Brand>
+          <div className="navbar_start">
+            <Navbar.Brand  href="/furniture">Furniture</Navbar.Brand>
+          </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/about">About</Nav.Link>
-              {!userIsAuthenticated() ? 
-                <>
-                  <Nav.Link href="/register">Register</Nav.Link>
-                  <Nav.Link href="/login">Login</Nav.Link>
-                </> :
-                <>
-                  <Nav.Link href="/new">Add new furniture</Nav.Link>
-                  <Navbar.Brand href="/furniture">{`Welcome ${userinfo.username}`}</Navbar.Brand>
-                  <Button onClick={handleLogout} variant="dark">Log Out</Button>
-                </>
+            <div className="navbar_end">
+              <Nav className="me-auto">
+                <Nav.Link href="/about">About</Nav.Link>
+                {!userIsAuthenticated() ? 
+                  <>
+                    <Nav.Link href="/register">Register</Nav.Link>
+                    <Nav.Link href="/login">Login</Nav.Link>
+                  </> :
+                  <>
+                    <Nav.Link href="/new">Add new furniture</Nav.Link>
+                    <Navbar.Brand href="/furniture">{`Welcome ${userinfo.username}`}</Navbar.Brand>
+                    <Button onClick={handleLogout} variant="transparent">Log Out</Button>
+                  </>
 
-              }
-            </Nav>
+                }
+              </Nav>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      
     </>
 
   )

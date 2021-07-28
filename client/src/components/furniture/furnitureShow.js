@@ -6,6 +6,7 @@ import ListGroupItem from 'react-bootstrap/ListGroupItem'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functions'
+import Container from 'react-bootstrap/Container'
 
 
 
@@ -51,34 +52,37 @@ const FurnitureShow = () => {
 
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={onepiece.image} />
-      <Card.Body>
-        <Card.Title>{onepiece.name}</Card.Title>
-        <Card.Text>
-          {onepiece.description}
-        </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroupItem>Year: {onepiece.year}</ListGroupItem>
-        <ListGroupItem>Designer: {onepiece.designer}</ListGroupItem>
+    <>
+      <Container className="header">{onepiece.name}</Container>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={onepiece.image} />
+        <Card.Body>
+          <Card.Title>{onepiece.name}</Card.Title>
+          <Card.Text>
+            {onepiece.description}
+          </Card.Text>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          <ListGroupItem>Year: {onepiece.year}</ListGroupItem>
+          <ListGroupItem>Designer: {onepiece.designer}</ListGroupItem>
         
-        <ListGroupItem>Color: {onepiece.color}</ListGroupItem>
-      </ListGroup>
-      <Card.Body>
-        {userIsOwner() === onepiece.owner ?
-          <>
-            <Button onClick={handleDelete} variant="dark">Delete</Button>
-            <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
+          <ListGroupItem>Color: {onepiece.color}</ListGroupItem>
+        </ListGroup>
+        <Card.Body>
+
+          {userIsOwner() === onepiece.owner ?
+            <>
+              <Button onClick={handleDelete} variant="dark">Delete</Button>
+              <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
         
-          </>
-          :
-          <></>
-        }
-      </Card.Body>
-      <div><p>Comments</p>
+            </>
+            :
+            <></>
+          }
+        </Card.Body>
+        <div><p>Comments</p>
       
-        { onepiece.comments && 
+          { onepiece.comments && 
         <div>
 
           {
@@ -93,10 +97,10 @@ const FurnitureShow = () => {
             })
           }
         </div>
-        }
-      </div>
-    </Card>
-        
+          }
+        </div>
+      </Card>
+    </>
        
         
 
