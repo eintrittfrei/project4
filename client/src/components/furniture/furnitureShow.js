@@ -28,7 +28,7 @@ const FurnitureShow = () => {
     getData()
   }, [id])
 
-  console.log(onepiece)
+  console.log('onepiece', onepiece)
 
   const handleDelete = async () => {
     try {
@@ -48,7 +48,7 @@ const FurnitureShow = () => {
     return payload.sub
   
   }
-  // userIsOwner()
+
 
   return (
     <Card style={{ width: '18rem' }}>
@@ -66,7 +66,7 @@ const FurnitureShow = () => {
         <ListGroupItem>Color: {onepiece.color}</ListGroupItem>
       </ListGroup>
       <Card.Body>
-        {userIsOwner === onepiece.owner ?
+        {userIsOwner() === onepiece.owner ?
           <>
             <Button onClick={handleDelete} variant="dark">Delete</Button>
             <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>

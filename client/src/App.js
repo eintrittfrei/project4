@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import Home from './components/common/Home'
 import NavBar from './components/common/Navbar'
 import Register from './helpers/auth/Register'
@@ -15,17 +15,17 @@ import Edit from './components/user/EditPiece'
 const App = () => {
   
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get('/api/furniture')
-        console.log(data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getData()
-  }, [])
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const { data } = await axios.get('/api/furniture')
+  //       console.log(data)
+  //     } catch (err) {
+  //       console.log(err)
+  //     }
+  //   }
+  //   getData()
+  // }, [])
 
 
 
