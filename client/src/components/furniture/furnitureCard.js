@@ -12,7 +12,7 @@ const FurnitureCard = ({ id, name, image }) => {
   return (
     <>
       <Row>
-        <Col xs={12}  md={12}>
+        <Col xs={10}  md={12}>
           <Row>
             <Card  style={ { width: '18rem', height: '25rem' }} key={id}>
               <Link href={`/furniture/${id}`}>

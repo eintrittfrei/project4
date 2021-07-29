@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-import ListGroupItem from 'react-bootstrap/ListGroupItem'
-import ListGroup from 'react-bootstrap/ListGroup'
+// import ListGroupItem from 'react-bootstrap/ListGroupItem'
+// import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functions'
 import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 
 
 
@@ -53,53 +56,66 @@ const FurnitureShow = () => {
 
   return (
     <>
+    
       <Container className="header">{onepiece.name}</Container>
-      <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={onepiece.image} />
-        <Card.Body>
-          <Card.Title>{onepiece.name}</Card.Title>
-          <Card.Text>
-            {onepiece.description}
-          </Card.Text>
-        </Card.Body>
-        <ListGroup className="list-group-flush">
-          <ListGroupItem>Year: {onepiece.year}</ListGroupItem>
-          <ListGroupItem>Designer: {onepiece.designer}</ListGroupItem>
-        
-          <ListGroupItem>Color: {onepiece.color}</ListGroupItem>
-        </ListGroup>
-        <Card.Body>
-
-          {userIsOwner() === onepiece.owner ?
+      <Container className="show_style">
+        <Row className="inner_row">
+          <Col className="image" xs={2} md={2} lg={2} style={{ width: '22rem' }}><Image style={{ width: '20rem' }} src={onepiece.image} alt={onepiece.name} />
+          </Col>
+          <Col className="detail"xs={2} md={2} lg={2} style={{ width: '22rem' }}>
+            <Row >{`[description] ${onepiece.description}`}</Row>
+            <Row>{`[name] ${onepiece.name}`}</Row>
+            <Row>{`[year] ${onepiece.year}`}</Row>
+            <Row>{`[designer] ${onepiece.designer}`}</Row>
+            <Row>{`[color] ${onepiece.color}`}</Row>
+            <Row>{`[name] ${onepiece.name}`}</Row>
+            {onepiece.owner &&
             <>
-              <Button onClick={handleDelete} variant="dark">Delete</Button>
-              <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
-        
+              <Row>{`[added by] ${onepiece.owner.username}`}</Row>
             </>
-            :
-            <></>
-          }
-        </Card.Body>
-        <div><p>Comments</p>
+            }
+            <Row>{userIsOwner() === onepiece.owner ?
+              <>
+                <Button onClick={handleDelete} variant="dark">Delete</Button>
+                <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
+        
+              </>
+              :
+              <></>
+            }</Row>
+            
+          </Col>
+          
+        </Row>
+        <Col xs={2} md={2} lg={3} style={{ width: 'rem' }}>
+          <Row><div><p>Comments</p>
       
-          { onepiece.comments && 
-        <div>
+            { onepiece.comments && 
+<Row>
+  <Col xs={1} md={1} lg={1} style={{ width: '200rem' }}>
+    {
+      onepiece.comments.map(item => {
+        return (
+          <div key={item.id}>
+            <p>{item.owner} </p>
+            <p>{item.text}</p>
+            <p>created at {item.created_at}</p>
+          
+          </div>
+        )
+      })
+    }
+  </Col>
+</Row>
+            }
+          </div></Row> 
+        </Col>
+        <Row>
 
-          {
-            onepiece.comments.map(item => {
-              return (
-                <div key={item.id}>
-                  <p>{item.text}</p>
-                  <p>{item.owner.username}</p>
-                  <p>{item.created_at}</p>
-                </div>
-              )
-            })
-          }
-        </div>
-          }
-        </div>
-      </Card>
+        </Row>
+        
+      </Container>
+      
     </>
        
         

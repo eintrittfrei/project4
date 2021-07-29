@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useLocation, useHistory } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functions'
@@ -23,6 +23,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
+    
     history.push('/')
   }
   const userIsAuthenticated = () => {
@@ -76,7 +77,7 @@ const NavBar = () => {
                   <>
                     <Nav.Link href="/new">Add new furniture</Nav.Link>
                     <Navbar.Brand href="/furniture">{`Welcome ${userinfo.username}`}</Navbar.Brand>
-                    <Button onClick={handleLogout} variant="transparent">Log Out</Button>
+                    <Button className="logout" onClick={handleLogout} variant="transparent">Log Out</Button>
                   </>
 
                 }

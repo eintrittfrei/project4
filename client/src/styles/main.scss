@@ -13,8 +13,9 @@ nav{
   button.navbar-toggler.collapsed {
     border: none;
   }
-  
-  
+  .logout {
+    border: none;
+  }
 }
 .navbar-light .navbar-toggler:focus {
   box-shadow:none;
@@ -74,4 +75,29 @@ div.container-fluid {
     align-items: center;
     justify-content: center;
   }
+}
+
+// Show style 
+
+div.show_style.container {
+  margin-left: 0;
+
+div.inner_row.row {
+  display: flex;
+    justify-content: flex-start;
+}
+.detail {
+  
+
+  div.row {
+    border-bottom: 1px solid black;
+  }
+}
+
+.inner_row {
+  img {
+    object-fit: cover;
+  }
+}
+
 }
