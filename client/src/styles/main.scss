@@ -43,7 +43,7 @@ div.header.container {
 div.container-fluid {
   display: flex;
   flex-wrap: wrap;
-  max-width: 100%;
+  max-width: 2000px;
   justify-content: center;
   
   div.row {
@@ -70,7 +70,6 @@ div.container-fluid {
   }
   img {
     object-fit: cover;
-    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,6 +80,7 @@ div.container-fluid {
 
 div.show_style.container {
   margin-left: 0;
+  margin-top: 5%;
 
 div.inner_row.row {
   display: flex;
@@ -89,7 +89,10 @@ div.inner_row.row {
 .detail {
   
 
-  div.row {
+  div.normal_row.row {
+    border-bottom: 1px solid black;
+  }
+  div.user_is_owner.row {
     border-bottom: 1px solid black;
   }
 }
@@ -98,6 +101,27 @@ div.inner_row.row {
   img {
     object-fit: cover;
   }
+
+}
+.buttons {
+  margin: 1%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .delete {
+    margin-right: 1%;
+  }
 }
 
+}
+
+div.form_container.container {
+  background-color:rgb(246, 248, 250);
+  display: flex;
+  justify-content: center;
+  padding: 5%;
+  
+    .form_field {
+        max-width: 350px;
+  }
 }

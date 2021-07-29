@@ -12,11 +12,11 @@ const FurnitureCard = ({ id, name, image }) => {
   return (
     <>
       <Row>
-        <Col xs={10}  md={12}>
+        <Col sm={true} >
           <Row>
             <Card  style={ { width: '18rem', height: '25rem' }} key={id}>
               <Link href={`/furniture/${id}`}>
-                <Card.Img height={240} className='card_image' key={id} variant="top" src={image} />
+                <Card.Img height={300}  className='card_image' key={id} variant="top" src={image} />
               </Link>
               {/* <Card.Body> */}
               <Card.Title keyt={id}>{name}</Card.Title>

@@ -19,11 +19,12 @@ const EditForm = ({
 
   return (
 
-    <Col>
+    <Col className="form_field">
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="basic_name">
           <Form.Label>Name</Form.Label>
-          <Form.Control 
+          <Form.Control
+            size="sm" 
             type="text"
             name="name"
             value={formdata.name} 
@@ -36,7 +37,8 @@ const EditForm = ({
   
         <Form.Group className="mb-3" controlId="bascic_year">
           <Form.Label>Year</Form.Label>
-          <Form.Control 
+          <Form.Control
+            size="sm" 
             type="year"
             name="year"
             value={formdata.year} 
@@ -47,7 +49,8 @@ const EditForm = ({
 
         <Form.Group className="mb-3" controlId="basic_designer">
           <Form.Label>Designer</Form.Label>
-          <Form.Control 
+          <Form.Control
+            size="sm" 
             type="text" 
             name="designer"
             value={formdata.designer}
@@ -61,6 +64,7 @@ const EditForm = ({
         <Form.Group className="mb-3" controlId="basic_color">
           <Form.Label>Color</Form.Label>
           <Form.Control 
+            size="sm"
             type="text" 
             placeholder="Color"
             name="color"
@@ -73,7 +77,8 @@ const EditForm = ({
 
         <Form.Group className="mb-3" controlId="basic_description">
           <Form.Label>Description</Form.Label>
-          <Form.Control 
+          <Form.Control
+            size="sm" 
             type="text" 
             placeholder="Description"
             name="description"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react' 
 import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
-import Card from 'react-bootstrap/Card'
+// import Card from 'react-bootstrap/Card'
 // import ListGroupItem from 'react-bootstrap/ListGroupItem'
 // import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
@@ -10,6 +10,7 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import Link from 'react-bootstrap/NavLink'
 
 
 
@@ -17,7 +18,7 @@ import Image from 'react-bootstrap/Image'
 
 const FurnitureShow = () => {
   const [onepiece, setOnePiece] = useState({})
-  
+  const [user, setUser] = useState({})
   const { id } = useParams()
   const history = useHistory()
 
@@ -31,6 +32,16 @@ const FurnitureShow = () => {
     }
     getData()
   }, [id])
+
+  
+  useEffect(() => {
+    const getData2 = async () => {
+      const { data } = await axios.get(`/api/furniture/${id}`)
+      setUser(data.owner)
+    }
+    getData2()
+  }, [id])
+  
 
   console.log('onepiece', onepiece)
 
@@ -63,31 +74,35 @@ const FurnitureShow = () => {
           <Col className="image" xs={2} md={2} lg={2} style={{ width: '22rem' }}><Image style={{ width: '20rem' }} src={onepiece.image} alt={onepiece.name} />
           </Col>
           <Col className="detail"xs={2} md={2} lg={2} style={{ width: '22rem' }}>
-            <Row >{`[description] ${onepiece.description}`}</Row>
-            <Row>{`[name] ${onepiece.name}`}</Row>
-            <Row>{`[year] ${onepiece.year}`}</Row>
-            <Row>{`[designer] ${onepiece.designer}`}</Row>
-            <Row>{`[color] ${onepiece.color}`}</Row>
-            <Row>{`[name] ${onepiece.name}`}</Row>
+            <Row className="normal_row">{`[description] ${onepiece.description}`}</Row>
+            <Row className="normal_row">{`[name] ${onepiece.name}`}</Row>
+            <Row className="normal_row">{`[year] ${onepiece.year}`}</Row>
+            <Row className="normal_row">{`[designer] ${onepiece.designer}`}</Row>
+            <Row className="normal_row">{`[color] ${onepiece.color}`}</Row>
+            <Row className="normal_row">{`[name] ${onepiece.name}`}</Row>
             {onepiece.owner &&
             <>
               <Row>{`[added by] ${onepiece.owner.username}`}</Row>
             </>
             }
-            <Row>{userIsOwner() === onepiece.owner ?
+            <Row className="user_is_owner">{userIsOwner() === user.id ?
               <>
-                <Button onClick={handleDelete} variant="dark">Delete</Button>
-                <Card.Link href={`/furniture/${id}/edit`} >Edit</Card.Link>
-        
+                <div className="buttons">
+                  <Button className="delete" onClick={handleDelete} variant="danger">Delete</Button>
+                  <Link href={`/furniture/${id}/edit`} variant="light" >Edit</Link>
+                </div>
               </>
               :
               <></>
-            }</Row>
+            }
+
+            
+            </Row>
             
           </Col>
           
         </Row>
-        <Col xs={2} md={2} lg={3} style={{ width: 'rem' }}>
+        <Col>
           <Row><div><p>Comments</p>
       
             { onepiece.comments && 

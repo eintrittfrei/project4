@@ -23,8 +23,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
-    
-    history.push('/')
+    history.push('/furniture')
   }
   const userIsAuthenticated = () => {
     const payload = getPayload()

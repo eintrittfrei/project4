@@ -68,7 +68,7 @@ const NewFurniture = () => {
   }
  
   return (
-    <Container>
+    <Container className="form_container">
       <EditForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}

@@ -71,7 +71,9 @@ const Edit = () => {
 
   return (
     <>
-      <Container>
+      <Container className="header">edit</Container>
+      <Container className="form_container">
+       
         <EditForm
           formdata={formdata}
           handleChange={handleChange} 
