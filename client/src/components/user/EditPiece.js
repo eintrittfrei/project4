@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react' 
+import React, { useState, useEffect } from 'react' 
 import { useHistory, useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import EditForm from './Form'
@@ -38,14 +38,14 @@ const Edit = () => {
     type: [],
     room: [],
   })
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const { data } = await axios.get(`/api/furniture/${id}`)
-  //     setFormData(data)
-  //     console.log('data', data)
-  //   }
-  //   getData()
-  // }, [id]) 
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get(`/api/furniture/${id}`)
+      setFormData(data)
+      console.log('data', data)
+    }
+    getData()
+  }, [id]) 
 
   const handleChange = (event) => {
     const updatedFormData = { ...formdata, [event.target.name]: event.target.value }

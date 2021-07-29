@@ -1,12 +1,19 @@
 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
 // Nav style
 
-
+a.navbar-brand {
+  font-family: 'montserrat' sans-serif;
+  }
 nav{
   div.container {
     margin: 0;
     padding-left: 0;
+    
   }
+  
   .bg-light {
     background-color: none;
   }
@@ -25,8 +32,8 @@ nav{
   box-shadow:none;
   border: none;
 }
-.navbar-light .navbar-nav .nav-link {
-  color: black;
+.nav-bar-profile-image {
+  border-radius: 50%;
 }
 
 // header
@@ -36,8 +43,12 @@ div.header.container {
   margin-top: -40px;
   font-size: 600%;
   padding: 0;
+  font-family: 'Montserrat', sans-serif ;
 }
 
+div.card-title.h5 {
+  font-family: 'Montserrat', sans-serif ;
+}
 // Card style 
 
 div.container-fluid {
@@ -120,8 +131,18 @@ div.form_container.container {
   display: flex;
   justify-content: center;
   padding: 5%;
+  max-width: 400px;
+  
   
     .form_field {
         max-width: 350px;
   }
+}
+// Comments
+div.comments.row {
+  border-top: 1px solid black;
+  margin-top: 5%;
+}
+.form-control {
+  border-radius: none;
 }

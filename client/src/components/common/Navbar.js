@@ -75,7 +75,15 @@ const NavBar = () => {
                   </> :
                   <>
                     <Nav.Link href="/new">Add new furniture</Nav.Link>
-                    <Navbar.Brand href="/furniture">{`Welcome ${userinfo.username}`}</Navbar.Brand>
+                    
+                    <Nav.Link href="/furniture">{`Welcome ${userinfo.username}`} </Nav.Link>
+                    <img 
+                      src={userinfo.profile_image}
+                      alt={userinfo.owner}
+                      height={30}
+                      width={30}
+                      className="nav-bar-profile-image"
+                    />
                     <Button className="logout" onClick={handleLogout} variant="transparent">Log Out</Button>
                   </>
 

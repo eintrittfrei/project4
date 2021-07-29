@@ -68,18 +68,20 @@ const NewFurniture = () => {
   }
  
   return (
-    <Container className="form_container">
-      <EditForm
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        formdata={formdata}
-        handleMultiChange={handleMultiChange}
-        selectOptions={selectOptions}
-        selectOptionsRoom={selectOptionsRoom}
-        handleImageUrl={handleImageUrl}
-      />
-    </Container>
-
+    <>
+      <Container className="header">add</Container>
+      <Container className="form_container">
+        <EditForm
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          formdata={formdata}
+          handleMultiChange={handleMultiChange}
+          selectOptions={selectOptions}
+          selectOptionsRoom={selectOptionsRoom}
+          handleImageUrl={handleImageUrl}
+        />
+      </Container>
+    </>
 
   )
 

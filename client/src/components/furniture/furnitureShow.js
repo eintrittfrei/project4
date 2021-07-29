@@ -88,23 +88,18 @@ const FurnitureShow = () => {
             <Row className="user_is_owner">{userIsOwner() === user.id ?
               <>
                 <div className="buttons">
-                  <Button className="delete" onClick={handleDelete} variant="danger">Delete</Button>
+                  <Button className="delete" onClick={handleDelete} variant="link">Delete</Button>
                   <Link href={`/furniture/${id}/edit`} variant="light" >Edit</Link>
                 </div>
               </>
               :
               <></>
             }
-
-            
             </Row>
-            
           </Col>
-          
         </Row>
         <Col>
-          <Row><div><p>Comments</p>
-      
+          <Row className="comments"><div><p>Comments</p>
             { onepiece.comments && 
 <Row>
   <Col xs={1} md={1} lg={1} style={{ width: '200rem' }}>
@@ -115,7 +110,6 @@ const FurnitureShow = () => {
             <p>{item.owner} </p>
             <p>{item.text}</p>
             <p>created at {item.created_at}</p>
-          
           </div>
         )
       })
