@@ -2,13 +2,13 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.exceptions import NotFound
-
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .models import Show
 
 from .common import ShowSerializer
 from .populated import PopulatedShowSerializer
 
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
  
 # Create your views here.
 
@@ -16,12 +16,14 @@ class ShowListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
      
     def get(self, _request):
+        
         furniture = Show.objects.all()
         serialized_furniture = PopulatedShowSerializer(furniture, many=True)
         return Response(serialized_furniture.data, status=status.HTTP_200_OK)
 
 
     def post(self, request):
+        request.data['owner'] = request.user.id
         furniture_to_add = ShowSerializer(data=request.data)
         if furniture_to_add.is_valid():
             furniture_to_add.save()
@@ -31,6 +33,7 @@ class ShowListView(APIView):
 
 
 class ShowDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
     
     def get_one(self, pk):
         try:
@@ -45,6 +48,7 @@ class ShowDetailView(APIView):
         return Response(serialized_furniture_one.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):
+        request.data['owner'] = request.user.id
         piece_to_edit = self.get_one(pk=pk)
         updated_piece = ShowSerializer(piece_to_edit, data=request.data)
         if updated_piece.is_valid():

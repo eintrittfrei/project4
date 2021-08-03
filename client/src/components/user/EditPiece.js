@@ -68,19 +68,21 @@ const Edit = () => {
       console.log(err)
     }
   }
-
+  const handleImageUrl = (url) => {
+    setFormData({ ...formdata, image: url })
+  }
   return (
     <>
       <Container className="header">edit</Container>
       <Container className="form_container">
-       
         <EditForm
           formdata={formdata}
           handleChange={handleChange} 
           handleMultiChange={handleMultiChange}
           handleSubmit={handleSubmit}
           selectOptions={selectOptions}
-          selectOptionsRoom={selectOptionsRoom}  
+          selectOptionsRoom={selectOptionsRoom}
+          handleImageUrl={handleImageUrl}  
         />
       </Container>
     </>

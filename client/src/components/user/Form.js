@@ -120,8 +120,8 @@ const EditForm = ({
             onChange={handleChange} />
         </Form.Group> */}
 
-        <Button variant="primary" type="submit">
-      Submit
+        <Button className="form_submit" variant="link" type="submit">
+      Submit Form
         </Button>{' '}
       </Form>
     </Col>

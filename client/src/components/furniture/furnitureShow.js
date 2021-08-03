@@ -11,6 +11,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Link from 'react-bootstrap/NavLink'
+import Figure from 'react-bootstrap/Figure'
 
 
 
@@ -101,16 +102,21 @@ const FurnitureShow = () => {
         <Col>
           <Row className="comments"><div><p>Comments</p>
             { onepiece.comments && 
-<Row>
+<Row className="comments_row">
   <Col xs={1} md={1} lg={1} style={{ width: '200rem' }}>
     {
       onepiece.comments.map(item => {
         return (
-          <div key={item.id}>
-            <p>{item.owner} </p>
-            <p>{item.text}</p>
-            <p>created at {item.created_at}</p>
-          </div>
+          <Figure className="comment_item" key={item.id}>
+            <Figure.Caption key={item.id}>
+              <div key={item.id}>
+                {/* <p>{item.owner} </p> */}
+                <p>{item.text}</p>
+                <p>created at: {item.created_at}</p>
+              </div>
+            </Figure.Caption>
+          </Figure>
+          
         )
       })
     }

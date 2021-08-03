@@ -10,7 +10,7 @@ from django.contrib.auth import get_user_model
 from django.conf import settings
 from .serializer import UserSerializer
 
-
+from rest_framework.permissions import IsAuthenticated
 
 
 User = get_user_model()
@@ -47,3 +47,12 @@ class LoginView(APIView):
         )
         return Response({ 'token': token, 'message': f"Welcome back {user_to_login.username}" })
 
+class ProfileView(APIView):
+    permission_classes = (IsAuthenticated, )
+    
+    def get(self, _request, pk):
+        profile = User.objects.get(pk=pk)
+        serialized_profile = UserSerializer(profile)
+        return Response(serialized_profile.data, status=status.HTTP_200_OK)
+
+ 

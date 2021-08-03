@@ -23,7 +23,7 @@ const Login = () => {
     window.localStorage.setItem('token', token)
   }  
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async () => {
     event.preventDefault()
     try {
       const { data } = await axios.post('/api/auth/login/', formdata)
@@ -68,7 +68,7 @@ const Login = () => {
             </Form.Text> */}
           </Form.Group>
           
-          <Button type="submit" variant="dark">login</Button>{' '}
+          <Button type="submit" variant="link">login</Button>{' '}
         
         </Form>
       </Container>

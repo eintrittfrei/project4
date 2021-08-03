@@ -1,0 +1,97 @@
+[
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$MX2SMvOY9amKyBKuXyUUEh$vzLSRv3hF9ta3tCMwSN2sLs+nnR/WIQxeuVCcOPS1aE=",
+    "last_login": "2021-07-23T11:01:39.534Z",
+    "is_superuser": true,
+    "username": "admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-07-22T16:24:42.965Z",
+    "email": "admin@email.com",
+    "first_name": "",
+    "last_name": "",
+    "profile_image": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$5R5bM66lycW9WPpbxHk5o1$oCfluKaJm4tDgbKB7/tWz6S0s8YZlUjdeDCY20emwbw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ole",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-07-23T10:16:30.212Z",
+    "email": "ole@email.com",
+    "first_name": "Ole",
+    "last_name": "Nascimento",
+    "profile_image": "test.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$xUs256aeCn7qJmVTAn8S0W$fIiZVUZjLE6Cst9hR9sB/iDEnA4mPvsWYw9J8Zs0oRQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "daniel",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-07-25T13:23:49.364Z",
+    "email": "dan@email.com",
+    "first_name": "Daniel",
+    "last_name": "Daniel",
+    "profile_image": "C:\\fakepath\\Screenshot 2021-07-22 at 13.23.04.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$4sOO9ApPtvRk8yWM6IRsSc$6CBIn9VFcsfoOV1WzRvPjBh5GXj1OY+s8HXDSw86fiY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jan",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-07-25T15:14:59.496Z",
+    "email": "jan@email.com",
+    "first_name": "jan",
+    "last_name": "ebsen",
+    "profile_image": "C:\\fakepath\\Screenshot 2021-07-22 at 13.23.04.png",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$2HMRklC2kDHcY28jQKX8AL$L44dp7Z/k0AC018LPPAwd0Q8w9XIrVvSkg1fdiDmG34=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "frank",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2021-07-25T15:18:29.091Z",
+    "email": "frank@email.com",
+    "first_name": "frank",
+    "last_name": "stengel",
+    "profile_image": "C:\\fakepath\\Screenshot 2021-07-22 at 13.23.04.png",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

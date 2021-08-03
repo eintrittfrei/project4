@@ -64,8 +64,9 @@ const Register = () => {
 
   return (
     <>
-      <Col>
-        <Container>
+      <Col>     
+        <Container className="header">register</Container>
+        <Container className="form_container">
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicUsername">
               <Form.Label>Username</Form.Label>
@@ -167,7 +168,7 @@ const Register = () => {
               value={formdata.profile_image}
               onChange={handleChange} />
           </Form.Group> */} 
-            <Button type="submit" variant="dark">Register</Button>{' '}
+            <Button type="submit" variant="link">Register</Button>{' '}
           </Form>
         </Container>
       </Col>

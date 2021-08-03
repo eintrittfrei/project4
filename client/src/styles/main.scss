@@ -115,16 +115,28 @@ div.inner_row.row {
 
 }
 .buttons {
-  margin: 1%;
+  
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
-  .delete {
-    margin-right: 1%;
+  
+  a.nav-link {
+    color:black;
+    a:hover {
+      box-shadow: 1% gray;
+    }
+  }
+
+  button.delete.btn.btn-link {
+    text-decoration: none;
+    color:black
   }
 }
 
+
+
 }
+// Form 
 
 div.form_container.container {
   background-color:rgb(246, 248, 250);
@@ -137,12 +149,24 @@ div.form_container.container {
     .form_field {
         max-width: 350px;
   }
+  button {
+    text-decoration: none;
+    color: black;
+    margin-top: 1%;
+    font-weight: bold;
+  }
 }
 // Comments
 div.comments.row {
   border-top: 1px solid black;
   margin-top: 5%;
+  max-width: 400px;
+  
 }
 .form-control {
   border-radius: none;
+}
+div.comments_row.row {
+  border-top: 1px solid black;
+  
 }

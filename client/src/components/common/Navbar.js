@@ -11,15 +11,15 @@ import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functio
 
 const NavBar = () => {
   const history = useHistory()
-  const location = useLocation()
+  const { pathname } = useLocation()
   const [userinfo, setUserinfo] = useState([])
   
   
   // console.log('location', location)
 
-  useEffect(() => {
+  // useEffect(() => {
 
-  },[location.pathname])
+  // },[pathname])
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
@@ -53,7 +53,8 @@ const NavBar = () => {
       }
     }
     getData()
-  }, [])
+
+  }, [pathname])
   console.log('userinfo', userinfo)
   
   return (
@@ -71,7 +72,7 @@ const NavBar = () => {
                 {!userIsAuthenticated() ? 
                   <>
                     <Nav.Link href="/register">Register</Nav.Link>
-                    <Nav.Link href="/login">Login</Nav.Link>
+                    <Nav.Link href="/login">Sign In</Nav.Link>
                   </> :
                   <>
                     <Nav.Link href="/new">Add new furniture</Nav.Link>
@@ -84,7 +85,7 @@ const NavBar = () => {
                       width={30}
                       className="nav-bar-profile-image"
                     />
-                    <Button className="logout" onClick={handleLogout} variant="transparent">Log Out</Button>
+                    <Button className="logout" onClick={handleLogout} variant="transparent">Logout</Button>
                   </>
 
                 }
