@@ -62,22 +62,22 @@ const NavBar = () => {
       <Navbar bg="transparent" variant="light" expand="lg">
         <Container>
           <div className="navbar_start">
-            <Navbar.Brand  href="/furniture">Furniture</Navbar.Brand>
+            <Navbar.Brand  href="/furniture/">Furniture</Navbar.Brand>
           </div>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <div className="navbar_end">
               <Nav className="me-auto">
-                <Nav.Link href="/about">About</Nav.Link>
+                <Nav.Link href="/about/">About</Nav.Link>
                 {!userIsAuthenticated() ? 
                   <>
-                    <Nav.Link href="/register">Register</Nav.Link>
-                    <Nav.Link href="/login">Sign In</Nav.Link>
+                    <Nav.Link href="/register/">Register</Nav.Link>
+                    <Nav.Link href="/login/">Sign In</Nav.Link>
                   </> :
                   <>
-                    <Nav.Link href="/new">Add new furniture</Nav.Link>
+                    <Nav.Link href="/new/">Add new furniture</Nav.Link>
                     
-                    <Nav.Link href="/furniture">{`Welcome ${userinfo.username}`} </Nav.Link>
+                    <Nav.Link href="/furniture/">{`Welcome ${userinfo.username}`} </Nav.Link>
                     <img 
                       src={userinfo.profile_image}
                       alt={userinfo.owner}

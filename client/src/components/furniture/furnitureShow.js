@@ -90,7 +90,7 @@ const FurnitureShow = () => {
               <>
                 <div className="buttons">
                   <Button className="delete" onClick={handleDelete} variant="link">Delete</Button>
-                  <Link href={`/furniture/${id}/edit`} variant="light" >Edit</Link>
+                  <Link href={`/furniture/${id}/edit/`} variant="light" >Edit</Link>
                 </div>
               </>
               :

@@ -15,22 +15,6 @@ import Edit from './components/user/EditPiece'
 const App = () => {
   
 
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     try {
-  //       const { data } = await axios.get('/api/furniture')
-  //       console.log(data)
-  //     } catch (err) {
-  //       console.log(err)
-  //     }
-  //   }
-  //   getData()
-  // }, [])
-
-
-
-
-
   return (
     <>
       <BrowserRouter>
