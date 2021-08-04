@@ -15,7 +15,7 @@ const FurnitureCard = ({ id, name, image }) => {
         <Col sm={true} >
           <Row>
             <Card  style={ { width: '18rem', height: '25rem' }} key={id}>
-              <Link href={`/furniture/${id}`}>
+              <Link href={`/furniture/${id}/`}>
                 <Card.Img height={300}  className='card_image' key={id} variant="top" src={image} />
               </Link>
               {/* <Card.Body> */}
