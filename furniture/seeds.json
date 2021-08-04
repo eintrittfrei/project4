@@ -4,11 +4,18 @@
   "pk": 1,
   "fields": {
     "name": "Stacking Chair",
-    "image": "chair.jpg",
+    "image": "https://res.cloudinary.com/dgrwhawx2/image/upload/v1627469833/project4_furniture/vitra-panton-chair-classic-vars2021-gruen-01_zoom_ej0riy.jpg",
     "year": 1960,
     "designer": "Verner Panton",
     "color": "Multiple",
-    "description": "The groundbreaking first single-form, single-material injection-molded chair that even stacks"
+    "description": "The groundbreaking first single-form, single-material injection-molded chair that even stacks",
+    "owner": 1,
+    "type": [
+      6
+    ],
+    "room": [
+      6
+    ]
   }
 },
 {
@@ -16,11 +23,18 @@
   "pk": 2,
   "fields": {
     "name": "Arm Chair",
-    "image": "chair.jpg",
+    "image": "https://hivemodern.com/public_resources/full/platner-arm-chair-warren-platner-knoll-4.jpg",
     "year": 1966,
     "designer": "Warren Platner",
     "color": "Black/silver",
-    "description": "Based on a period Louis XV-style chair."
+    "description": "Based on a period Louis XV-style chair.",
+    "owner": 1,
+    "type": [
+      2
+    ],
+    "room": [
+      3
+    ]
   }
 },
 {
@@ -28,11 +42,181 @@
   "pk": 3,
   "fields": {
     "name": "Egg",
-    "image": "chair.jpg",
+    "image": "https://img.vntg.com/15816760824737/arne-jacobsen-egg-chair-3316-for-fritz-hansen-1980s.jpg",
     "year": 1958,
     "designer": "Arne Jacobsen",
     "color": "black",
-    "description": "Jacobsen designed the Egg specifically for the SAS Royal hotel in Copenhagen."
+    "description": "Jacobsen designed the Egg specifically for the SAS Royal hotel in Copenhagen.",
+    "owner": 1,
+    "type": [
+      1
+    ],
+    "room": [
+      2
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 4,
+  "fields": {
+    "name": "Bauhaus Table Lamp",
+    "image": "https://shop.bauhaus-movement.com/media/2648/pagebuilder/2648.png",
+    "year": 1955,
+    "designer": "Wilhelm Wagenfeld, Carl Jakob Jucker",
+    "color": "silver",
+    "description": "Produced in the bauhaus metal workshop",
+    "owner": 2,
+    "type": [
+      3,
+      6
+    ],
+    "room": [
+      3
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 5,
+  "fields": {
+    "name": "Barcelona",
+    "image": "https://www.popfurniture.com/media/magic360/cache/111fb38c712f6b9bb3ffa22b42a2909a/1/0/103000_1.jpg",
+    "year": 1929,
+    "designer": "Ludwig Mies van der Rohe",
+    "color": "black/red",
+    "description": "Designed to complement his German Pavilion for the 1929 International Exhibition in Barcelona.",
+    "owner": 1,
+    "type": [
+      1
+    ],
+    "room": [
+      2
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 6,
+  "fields": {
+    "name": "Bauhaus Nesting Side Tables",
+    "image": "https://cdn.connox.de/m/100107/164148/media/Klein-…g-Tables/Josef-Albers-Nesting-Tables-Gruppe-1.jpg",
+    "year": 1926,
+    "designer": "Josef Albers",
+    "color": "Multiple",
+    "description": "Each was crafted from acrylic-layered glass and solid oak, and used the three key Bauhaus colours.",
+    "owner": 1,
+    "type": [
+      5
+    ],
+    "room": [
+      7
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 7,
+  "fields": {
+    "name": "String Shelf",
+    "image": "https://minimauk.com/wp-content/uploads/2018/09/string-walnut-and-black-shelving-system-minima-.jpg",
+    "year": 1949,
+    "designer": "Nisse Strinning, Kajsa Strinning",
+    "color": "white, brown",
+    "description": "A Scandinavian shelving system",
+    "owner": 1,
+    "type": [
+      5
+    ],
+    "room": [
+      2,
+      4,
+      5,
+      6,
+      8
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 8,
+  "fields": {
+    "name": "Expose Side Table",
+    "image": "https://res.cloudinary.com/dgrwhawx2/image/upload/v1627469962/project4_furniture/1106983_kej7mj.jpg",
+    "year": 1952,
+    "designer": "unknown",
+    "color": "black",
+    "description": "Made from aluminum",
+    "owner": 1,
+    "type": [
+      2
+    ],
+    "room": [
+      8,
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 16,
+  "fields": {
+    "name": "Serpentine Sofa",
+    "image": "https://res.cloudinary.com/dgrwhawx2/image/upload/v1627469053/project4_furniture/slide_20_7_u9cjyr.jpg",
+    "year": 1950,
+    "designer": "Vladimir Kagan",
+    "color": "pink",
+    "description": "His mid-century modern pieces defined the curves of the era.",
+    "owner": 1,
+    "type": [
+      1,
+      4
+    ],
+    "room": [
+      2
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 17,
+  "fields": {
+    "name": "Alu Chair",
+    "image": "https://res.cloudinary.com/dgrwhawx2/image/upload/v1627541502/project4_furniture/CHAIR_1.2.2-scaled_eefn4t.jpg",
+    "year": 2020,
+    "designer": "Hans Coray",
+    "color": "red",
+    "description": "Swiss design classic.",
+    "owner": 2,
+    "type": [
+      6,
+      4
+    ],
+    "room": [
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "furniture.show",
+  "pk": 20,
+  "fields": {
+    "name": "Kari Chair",
+    "image": "https://res.cloudinary.com/dgrwhawx2/image/upload/v1627639383/project4_furniture/kari-shea-AMyjxxLEHU4-unsplash_xtmfqr.jpg",
+    "year": 2020,
+    "designer": "unknown",
+    "color": "white - birch",
+    "description": "Wide lounge chair",
+    "owner": 2,
+    "type": [
+      1
+    ],
+    "room": [
+      8,
+      2
+    ]
   }
 }
 ]
