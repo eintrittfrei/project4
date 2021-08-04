@@ -27,7 +27,7 @@ const FurnitureShow = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/furniture/${id}`)
+      const { data } = await axios.get(`/api/furniture/${id}/`)
       setOnePiece(data)
       console.log('DATA', data)
     }
@@ -37,7 +37,7 @@ const FurnitureShow = () => {
   
   useEffect(() => {
     const getData2 = async () => {
-      const { data } = await axios.get(`/api/furniture/${id}`)
+      const { data } = await axios.get(`/api/furniture/${id}/`)
       setUser(data.owner)
     }
     getData2()
@@ -48,12 +48,12 @@ const FurnitureShow = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/furniture/${id}`, { 
+      await axios.delete(`/api/furniture/${id}/`, { 
         headers: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         },
       })
-      history.push(('/furniture'))
+      history.push(('/furniture/'))
     } catch (err) {
       console.log(err)
     }

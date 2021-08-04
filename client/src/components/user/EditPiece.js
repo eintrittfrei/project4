@@ -40,7 +40,7 @@ const Edit = () => {
   })
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/furniture/${id}`)
+      const { data } = await axios.get(`/api/furniture/${id}/`)
       setFormData(data)
       console.log('data', data)
     }
@@ -63,7 +63,7 @@ const Edit = () => {
         {
           headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
         } )
-      history.push(`/furniture/${id}`)
+      history.push(`/furniture/${id}/`)
     } catch (err) {
       console.log(err)
     }
