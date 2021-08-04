@@ -23,7 +23,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     window.localStorage.removeItem('token')
-    history.push('/furniture')
+    history.push('/furniture/')
   }
   const userIsAuthenticated = () => {
     const payload = getPayload()
@@ -43,7 +43,7 @@ const NavBar = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`/api/jwt_auth/${userId()}`,
+        const { data } = await axios.get(`/api/jwt_auth/${userId()}/`,
           {
             headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
           })

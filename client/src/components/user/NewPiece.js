@@ -52,7 +52,7 @@ const NewFurniture = () => {
           headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` },
         } 
       )
-      history.push('furniture')
+      history.push('/furniture/')
     } catch (err) {
       console.log(err)
     }

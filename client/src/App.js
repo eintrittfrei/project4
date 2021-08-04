@@ -38,11 +38,11 @@ const App = () => {
         <Switch>
           <Route path='/furniture/:id/edit/' component={Edit} />
           <Route path='/furniture/:id/' component={FurnitureShow} />
-          <Route path='/furniture' component={FurnitureIndex} />
-          <Route path='/new' component={NewFurniture} />
-          <Route path='/about' component={About} />
-          <Route path='/login' component={Login} />
-          <Route path='/register' component={Register} />
+          <Route path='/furniture/' component={FurnitureIndex} />
+          <Route path='/new/' component={NewFurniture} />
+          <Route path='/about/' component={About} />
+          <Route path='/login/' component={Login} />
+          <Route path='/register/' component={Register} />
           <Route path='/' component={Home} />
         </Switch>
       </BrowserRouter>
