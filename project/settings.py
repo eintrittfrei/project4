@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'project.urls'
+
 
 TEMPLATES = [
     {
@@ -151,11 +151,12 @@ REST_FRAMEWORK = {
 }
 
 
-
+ROOT_URLCONF = 'project.urls'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'client', "build", "static"), 
+    os.path.join(BASE_DIR, "client", "build", "static"), 
+
 )
 
 django_heroku.settings(locals())
