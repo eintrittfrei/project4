@@ -40,7 +40,13 @@ JavaScript (ES6)
 * Google fonts
 
 
-## Furniture App share your favorite ideas online
+## Furniture App share your favorite pieces online
+
+![Screenshot 2021-08-16 at 15 18 04](https://user-images.githubusercontent.com/16645758/129570205-e891a548-f9b0-4cc9-b121-5aa60958c679.png)
+
+![Screenshot 2021-08-16 at 15 18 23](https://user-images.githubusercontent.com/16645758/129570228-5f064b51-e56a-477f-89f3-11fd5157ce23.png)
+
+
 ### Overview
 Furniture is a pinterest inspired application where people can share their favorite design furniture. Users can register and add their favorite pieces to the list. Users can also edit and delta what they added.  
 
@@ -74,24 +80,47 @@ Comments
 Ratings 
 Save favorites to local storage (similar to a shopping basket)
 
-SCREENSHOTS figma AND WIREFRAMES 
+![Screenshot 2021-08-16 at 15 21 23](https://user-images.githubusercontent.com/16645758/129570400-ddd84767-ecb8-42cc-a218-7feb42e9e114.png)
 
 ## Process
 
 ### Backend
 I started by setting up the application and basic project and setting up the database using the Django web framework. The next step was to build out each app in the backend. I added the main app ‘furniture’ model first. Then I added apps for authentication, type, comments and rooms as well. I will use the ‘furniture’ app as an example for now. I added the serializer to convert from JSON to Python and back. 
 
-SCREEN SHOT SERIALIZER 
+```javascript
+from rest_framework import serializers
+from .models import Show
 
-I then built out the furniture views. First I imported APIview, response and status from the rest_framework and also added the model serializer. 
+class ShowSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Show
+        fields = '__all__'
+        
+ ```
 
-SCREEN SHOT
+I then built out the furniture views. First I imported APIview, response and status from the rest_framework and also added the model serializer. Next I defined a new class to handle the standard get request for the index route. I needed to use ‘self’ as this is a method inside a class. Now I needed to get all the information from the database by making a request through the model and ran it through the serializer ending with the return Response (to user) and also the status. 
 
-Next I defined a new class to handle the standard get request for the index route. I needed to use ‘self’ as this is a method inside a class. 
+```javascript
 
-Now I needed to get all the information from the database by making a request through the model and ran it through the serializer ending with the return Response (to user) and also the status. 
+class ShowListView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+     
+    def get(self, _request):
+        
+        furniture = Show.objects.all()
+        serialized_furniture = PopulatedShowSerializer(furniture, many=True)
+        return Response(serialized_furniture.data, status=status.HTTP_200_OK)
 
-SCREEN SHOT 
+
+    def post(self, request):
+        request.data['owner'] = request.user.id
+        furniture_to_add = ShowSerializer(data=request.data)
+        if furniture_to_add.is_valid():
+            furniture_to_add.save()
+            return Response(furniture_to_add.data, status=status.HTTP_201_CREATED)
+        return Response(furniture_to_add.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+
+```
 
 In the next step I built out the urls for the endpoints: 
 
