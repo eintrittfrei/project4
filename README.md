@@ -244,20 +244,20 @@ Another challenge was the form input and image upload. I was very proud having m
 Deploying a python project seems slightly more challenging compared to MongoDB/ Express. It was good to have gone through that process. 
 
 ## Key learning & Wins 
-I learned a lot and gained a lot of confidence in my skills.
-My most important learning is about planning and thinking ahead. It can save a lot of time if planning is done well. 
-I also improved my skills using React Bootstrap. 
-I learned how to deploy a python project.
-I massively improved my problem solving skills and experience and had to ask for help from instructors only once in 10 days. 
+* I learned a lot and gained a lot of confidence in my skills.
+* My most important learning is about planning and thinking ahead. It can save a lot of time if planning is done well. 
+* I also improved my skills using React Bootstrap. 
+* I learned how to deploy a python project.
+* I massively improved my problem solving skills and experience and had to ask for help from instructors only once in 10 days. 
 
 ## Bugs
-The comments section is not able to take inputs yet.
-The error handling for the form submitted for registration does not work when submitting a wrong password or an existing user name nothing happens and no error information are given to the user. 
+* The comments section is not able to take inputs yet.
+* The error handling for the form submitted for registration does not work when submitting a wrong password or an existing user name nothing happens and no error information are given to the user. 
 
 ## Future Improvements 
 
-Error Handling 
-Comments working 
-Ratings 
+* Error Handling 
+* Comments working 
+* Ratings 
 
 
