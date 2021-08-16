@@ -194,22 +194,49 @@ I started by building out my basic index page, detail page and navbar and about 
 
 Example index page: 
 I created a new component and imported the required packages. 
-I then began by making an axios request first to check I was getting the correct data from the database. I used the useEffect() function to make the get request to the API. I also used an async await to ensure the data request would work in the right order. I also added a try/ catch to show any errors that might come up. I used console.logs and Chrome developer tools to check the data coming through from the database.    
+I then began by making an axios request first to check I was getting the correct data from the database. I used the useEffect() function to make the get request to the API. I also used an async await to ensure the data request would work in the right order. I also added a try/ catch to show any errors that might come up. I used console.logs and Chrome developer tools to check the data coming through from the database. I could see the data in my console.log as a JSON object and then destructured by passing in the data directly. I set the data to state by using useState() setting the state to an empty object. 
 
-SCREEN SHOT code AND DATABASE LOGS 
+```javascript 
+const FurnitureIndex = () => {
+  const [furniture, setFurniture] = useState([])
 
-I could see the data in my console.log as a JSON object and then destructured by passing in the data directly. 
-
-EXAMPLE CODE 
-
-I set the data to state by using useState() setting the state to an empty object. 
-
-EXAMPLE CODE 
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await axios.get('/api/furniture/')
+        setFurniture(data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+  }, [])
+  
+ ```
 
 Now I could access the data using dot notation and display information in the return to built out my display page. 
 
-EXAMPLE CODE 
-
+```javascript 
+<Row className="comments"><div><p>Comments</p>
+            { onepiece.comments && 
+<Row className="comments_row">
+  <Col xs={1} md={1} lg={1} style={{ width: '200rem' }}>
+    {
+      onepiece.comments.map(item => {
+        return (
+          <Figure className="comment_item" key={item.id}>
+            <Figure.Caption key={item.id}>
+              <div key={item.id}>
+                {/* <p>{item.owner} </p> */}
+                <p>{item.text}</p>
+                <p>created at: {item.created_at}</p>
+              </div>
+            </Figure.Caption>
+          </Figure>
+          
+        )
+      })
+```
 
 ## Challenges
 This project was very challenging in a very good way. I decided to do this on my own to check what I had learned so far as my previous projects with React had been in a group. I found the different relationships in the backend the most challenging part. For instance It took quite a while to work out how to display correct owner information for each item. 
