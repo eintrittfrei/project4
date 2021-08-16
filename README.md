@@ -124,21 +124,67 @@ class ShowListView(APIView):
 
 In the next step I built out the urls for the endpoints: 
 
-SCREEN SHOT 
+```javascript
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/furniture/', include('furniture.urls')),
+    path('api/type/', include('type.urls')),
+    path('api/room/', include('rooms.urls')),
+    path('api/auth/', include('jwt_auth.urls')),
+    path('api/comments/', include('comments.urls')),
+    path('api/jwt_auth/', include('jwt_auth.urls')),
+    re_path(r'^.*$', index),
+]
+```
 
 I added additional routes with the same steps including detail view (get), create (post), edit (put), delete(delete). 
 
 I included the many to many relationship by adding the type and room options to the furniture model
 
-SCREEN SHOT 
+```javascript
+
+class ShowDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    
+    def get_one(self, pk):
+        try:
+            return Show.objects.get(pk=pk)
+        except Show.DoesNotExist:
+            raise NotFound(detail="🐙 Can't find that piece")
+
+
+    def get(self, _request, pk):
+        furniture_one = self.get_one(pk=pk)
+        serialized_furniture_one = PopulatedShowSerializer(furniture_one)
+        return Response(serialized_furniture_one.data, status=status.HTTP_200_OK)
+
+    def put(self, request, pk):
+        request.data['owner'] = request.user.id
+        piece_to_edit = self.get_one(pk=pk)
+        updated_piece = ShowSerializer(piece_to_edit, data=request.data)
+        if updated_piece.is_valid():
+            updated_piece.save()
+            return Response(updated_piece.data, status=status.HTTP_202_ACCEPTED)
+        return Response(updated_piece.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
+        
+
+    def delete(self, _request, pk):
+        piece_to_delete = self.get_one(pk=pk)
+        piece_to_delete.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+```
 
 And also added the owner of each item by including the owner as user information as well. 
 
-SCREEN SHOT 
-
+```javascript
+owner = models.ForeignKey(
+      "jwt_auth.User",
+      related_name="furniture",
+      on_delete = models.CASCADE
+    )
+```
 Throughout developing the backend I used insomnia to check all my backend endpoints are working correctly on the frontend: 
-
-SCREEN SHOT 
 
 ### Front end 
 
