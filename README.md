@@ -239,9 +239,12 @@ Now I could access the data using dot notation and display information in the re
 ```
 
 ## Challenges
-This project was very challenging in a very good way. I decided to do this on my own to check what I had learned so far as my previous projects with React had been in a group. I found the different relationships in the backend the most challenging part. For instance It took quite a while to work out how to display correct owner information for each item. 
-Another challenge was the form input and image upload. I was very proud having managed to make this work in the end. 
-Deploying a python project seems slightly more challenging compared to MongoDB/ Express. It was good to have gone through that process. 
+This project was very challenging in a very good way. 
+* I decided to do this on my own to check what I had learned so far as my previous projects with React had been in a group. 
+* I found the different relationships in the backend the most challenging part. 
+* For instance It took quite a while to work out how to display correct owner information for each item. 
+* Another challenge was the form input and image upload. I was very proud having managed to make this work in the end. 
+* Deploying a python project seems slightly more challenging compared to MongoDB/ Express. 
 
 ## Key learning & Wins 
 * I learned a lot and gained a lot of confidence in my skills.
