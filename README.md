@@ -14,7 +14,7 @@ Ole Nascimento https://github.com/eintrittfrei
 * Use a Python/Django API to serve your data from an SQL database.
 * Consume your API with a separate front-end built with React.
 * Be a complete product which most likely means multiple relationships and CRUD functionality for at least a couple of models.
-* at least one many to many and one many to one relationship.
+* At least one many to many and one many to one relationship.
 * Implement thoughtful user stories/wireframes that are significant enough to help you know which features are core MVP and which you can cut.
 
 ## Technologies Used
@@ -56,36 +56,36 @@ https://furnitureideas.herokuapp.com/furniture
 ## Installation
 Clone or download the repo. In your terminal run the following commands: 
 
-Install dependencies with yarn add … 
-Move into the shell -> pipenv shell
-Start the database with python manage.py runserver
-Move to the client folder -- cd client 
-Start the front end -- yarn start 
+* Install dependencies with yarn add … .
+* Move into the shell -> pipenv shell.
+* Start the database with python manage.py runserver.
+* Move to the client folder -- cd client. 
+* Start the front end -- yarn start. 
 
 ## Planning
 This is a solo project and I started by planning out my basic wireframes and relationships using Figma. I used an existing furniture store website as a guide for design. I decided to have daily check-ins before starting work to check on progress and a plan for each day. I also set out my basic MVP and any additional features in case I had any extra time left.
 
 My basic MVP included: 
-Home page which was also the index page 
-Show page with details of each item individually 
-User registration
-Login 
-About page
-Ability for users to add items via form input 
-Ability for users to edit and delete items they created
-Image upload via Cloudinary for user profile images and item images
+* Home page which was also the index page. 
+* Show page with details of each item individually. 
+* User registration.
+* Login. 
+* About page.
+* Ability for users to add items via form input. 
+* Ability for users to edit and delete items they created.
+* Image upload via Cloudinary for user profile images and item images.
 
 Additional features: 
-Comments 
-Ratings 
-Save favorites to local storage (similar to a shopping basket)
+* Comments 
+* Ratings 
+* Save favorites to local storage (similar to a shopping basket).
 
 ![Screenshot 2021-08-16 at 15 21 23](https://user-images.githubusercontent.com/16645758/129570400-ddd84767-ecb8-42cc-a218-7feb42e9e114.png)
 
 ## Process
 
 ### Backend
-I started by setting up the application and basic project and setting up the database using the Django web framework. The next step was to build out each app in the backend. I added the main app ‘furniture’ model first. Then I added apps for authentication, type, comments and rooms as well. I will use the ‘furniture’ app as an example for now. I added the serializer to convert from JSON to Python and back. 
+I started by setting up the application and basic project and setting up the database using the Django web framework. The next step was to build out each app in the backend. I added the main app ‘furniture’ model first. Then I added apps for 'authentication', 'type', 'comments' and 'rooms' as well. I will use the ‘furniture’ app as an example for now. I added the serializer to convert from JSON to Python and back. 
 
 ```javascript
 from rest_framework import serializers
@@ -250,7 +250,7 @@ This project was very challenging in a very good way.
 * I learned a lot and gained a lot of confidence in my skills.
 * My most important learning is about planning and thinking ahead. It can save a lot of time if planning is done well. 
 * I also improved my skills using React Bootstrap. 
-* I learned how to deploy a python project.
+* I learned how to deploy a Python project.
 * I massively improved my problem solving skills and experience and had to ask for help from instructors only once in 10 days. 
 
 ## Bugs
