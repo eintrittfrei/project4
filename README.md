@@ -20,24 +20,24 @@ Ole Nascimento https://github.com/eintrittfrei
 ## Technologies Used
 
 Backend:
-* Django
-* Python
-* SQL
-* JSON Web Token
-* pipenv
-* TablePlus
+* Django.
+* Python.
+* SQL.
+* JSONWebToken.
+* pipenv.
+* TablePlus.
 
 JavaScript (ES6)
-* React 
-* Axios 
-* Nodemon 
-* React Router Dom
-* React Select
-* React Bootstrap
-* SASS
-* CSS3
-* Cloudinary
-* Google fonts
+* React. 
+* Axios. 
+* Nodemon. 
+* React Router Dom.
+* React Select.
+* React Bootstrap.
+* SASS.
+* CSS3.
+* Cloudinary.
+* Google fonts.
 
 
 ## Furniture App share your favorite pieces online
@@ -76,8 +76,8 @@ My basic MVP included:
 * Image upload via Cloudinary for user profile images and item images.
 
 Additional features: 
-* Comments 
-* Ratings 
+* Comments. 
+* Ratings. 
 * Save favorites to local storage (similar to a shopping basket).
 
 ![Screenshot 2021-08-16 at 15 21 23](https://user-images.githubusercontent.com/16645758/129570400-ddd84767-ecb8-42cc-a218-7feb42e9e114.png)
@@ -259,8 +259,8 @@ This project was very challenging in a very good way.
 
 ## Future Improvements 
 
-* Error Handling 
-* Comments working 
-* Ratings 
+* Error Handling. 
+* Comments working. 
+* Ratings. 
 
 
