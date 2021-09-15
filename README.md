@@ -19,25 +19,26 @@ Ole Nascimento https://github.com/eintrittfrei
 
 ## Technologies Used
 
-Backend:
-* Django.
-* Python.
-* SQL.
-* JSONWebToken.
-* pipenv.
-* TablePlus.
+Back-end:
+* Django
+* Python
+* SQL
+* JSONWebToken
+* pipenv
+* TablePlus
 
-JavaScript (ES6)
-* React. 
-* Axios. 
-* Nodemon. 
-* React Router Dom.
-* React Select.
-* React Bootstrap.
-* SASS.
-* CSS3.
-* Cloudinary.
-* Google fonts.
+Front-end
+* JavaScript (ES6)
+* React
+* Axios 
+* Nodemon 
+* React Router Dom
+* React Select
+* React Bootstrap
+* SASS
+* CSS3
+* Cloudinary
+* Google fonts
 
 
 ## Furniture App share your favorite pieces online
@@ -80,12 +81,12 @@ Additional features:
 * Ratings. 
 * Save favorites to local storage (similar to a shopping basket).
 
-![Screenshot 2021-08-16 at 15 21 23](https://user-images.githubusercontent.com/16645758/129570400-ddd84767-ecb8-42cc-a218-7feb42e9e114.png)
+<kbd>![Screenshot 2021-08-16 at 15 21 23](https://user-images.githubusercontent.com/16645758/129570400-ddd84767-ecb8-42cc-a218-7feb42e9e114.png)</kbd>
 
 ## Process
 
-### Backend
-I started by setting up the application and basic project and setting up the database using the Django web framework. The next step was to build out each app in the backend. I added the main app ‘furniture’ model first. Then I added apps for 'authentication', 'type', 'comments' and 'rooms' as well. I will use the ‘furniture’ app as an example for now. I added the serializer to convert from JSON to Python and back. 
+### Back-end
+I started by setting up the application and basic project and setting up the database using the Django web framework. The next step was to build out each app in the back-end. I added the main app ‘furniture’ model first. Then I added apps for 'authentication', 'type', 'comments' and 'rooms' as well. I will use the ‘furniture’ app as an example for now. I added the serializer to convert from JSON to Python and back. 
 
 ```javascript
 from rest_framework import serializers
@@ -184,11 +185,11 @@ owner = models.ForeignKey(
       on_delete = models.CASCADE
     )
 ```
-Throughout developing the backend I used insomnia to check all my backend endpoints are working correctly on the frontend: 
+Throughout developing the back-end I used insomnia to check all my back-end endpoints are working correctly on the front-end: 
 
-### Front end 
+### Front-end 
 
-I added the front end and started by building out my index route. I also built out a router using the React Router Dom. For readability I divided the frontend into different logical component sections including: common, furniture, user, helpers and styles.
+I added the front-end and started by building out my index route. I also built out a router using the React Router Dom. For readability I divided the frontend into different logical component sections including: common, furniture, user, helpers and styles.
 
 I started by building out my basic index page, detail page and navbar and about page then added user registration, login and the create form input. Lastly I added the edit and delete functionality and comments.  
 
@@ -244,7 +245,7 @@ This project was very challenging in a very good way.
 * I found the different relationships in the backend the most challenging part. 
 * For instance It took quite a while to work out how to display correct owner information for each item. 
 * Another challenge was the form input and image upload. I was very proud having managed to make this work in the end. 
-* Deploying a python project seems slightly more challenging compared to MongoDB/ Express. 
+* Deploying a Python project seems slightly more challenging compared to MongoDB/ Express. 
 
 ## Key learning & Wins 
 * I learned a lot and gained a lot of confidence in my skills.
