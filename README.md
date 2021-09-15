@@ -43,9 +43,12 @@ Front-end
 
 ## Furniture App share your favorite pieces online
 
-![Screenshot 2021-08-16 at 15 18 04](https://user-images.githubusercontent.com/16645758/129570205-e891a548-f9b0-4cc9-b121-5aa60958c679.png)
+<kbd>![Screenshot 2021-09-15 at 11 03 38](https://user-images.githubusercontent.com/16645758/133404644-4874c0b9-80db-41aa-a793-7b880c37ce9a.png)
+</kbd>
 
-![Screenshot 2021-08-16 at 15 18 23](https://user-images.githubusercontent.com/16645758/129570228-5f064b51-e56a-477f-89f3-11fd5157ce23.png)
+<kbd>![Screenshot 2021-09-15 at 11 04 06](https://user-images.githubusercontent.com/16645758/133404689-84ed6a77-9dfd-4ab1-84d2-e92ef7f020dc.png)
+</kbd>
+
 
 
 ### Overview
