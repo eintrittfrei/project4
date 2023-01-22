@@ -50,9 +50,6 @@ const Login = () => {
               name="email" 
               value={formdata.email}
               onChange={handleChange} />
-            {/* <Form.Text className="text-muted">
-              {errors.email && <p>{errors.email}</p>}
-            </Form.Text> */}
           </Form.Group>
         
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -63,9 +60,6 @@ const Login = () => {
               name="password" 
               value={formdata.password}
               onChange={handleChange} />
-            {/* <Form.Text className="text-muted">
-              {errors.password && <p>{errors.password}</p>}
-            </Form.Text> */}
           </Form.Group>
           
           <Button type="submit" variant="link">login</Button>{' '}

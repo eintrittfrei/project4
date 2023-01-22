@@ -4,11 +4,7 @@ import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button' 
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-// import { ImageUploadField } from '../imageUpload'
 import Col from 'react-bootstrap/Col'
-
-
-
 
 const Register = () => {
   const history = useHistory()
@@ -57,11 +53,6 @@ const Register = () => {
     })
     
   }
-  
-  // const handleImageUrl = url => {
-  //   setFormData({ ...formdata, image: url })
-  // }
-
   return (
     <>
       <Col>     
@@ -71,7 +62,6 @@ const Register = () => {
             <Form.Group className="mb-3" controlId="formBasicUsername">
               <Form.Label>Username</Form.Label>
               <Form.Control 
-              // className={`input ${errors.username ? 'danger' : ''}`}
                 type="text" 
                 placeholder="Enter username" 
                 name="username" 
@@ -80,10 +70,7 @@ const Register = () => {
               <Form.Text className="text-muted">
                 {errors.username && <p>{errors.username}</p>}
               </Form.Text>
-            
-            
             </Form.Group>
-          
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control 
@@ -156,18 +143,6 @@ const Register = () => {
                 value={formdata.image}
                 onChange={handleChange} />
             </Form.Group>
-            {/* <ImageUploadField
-              value={formdata.image}
-              name="profile_image"
-              handleImageUrl={handleImageUrl} />
-            {/* <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Profile picture</Form.Label>
-            <Form.Control 
-              type="file" 
-              name="profile_image" 
-              value={formdata.profile_image}
-              onChange={handleChange} />
-          </Form.Group> */} 
             <Button type="submit" variant="link">Register</Button>{' '}
           </Form>
         </Container>

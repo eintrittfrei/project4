@@ -1,9 +1,8 @@
-from comments.models import Comment
+from rest_framework.exceptions import NotFound
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import NotFound 
-
+from comments.models import Comment
 from .serializers.common import CommentSerializer
 
 class CommentListView(APIView):

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import EditForm from './Form'
-// import axios from 'axios'
 import { getTokenFromLocalStorage } from '../../helpers/auth/functions'
 
 const selectOptions = [

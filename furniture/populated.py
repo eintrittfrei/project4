@@ -10,5 +10,3 @@ class PopulatedShowSerializer(ShowSerializer):
     type = TypeSerializer(many=True)
     room = RoomSerializer(many=True)
     owner = UserSerializer()
-    
-    

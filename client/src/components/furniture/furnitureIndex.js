@@ -19,18 +19,13 @@ const FurnitureIndex = () => {
     }
     getData()
   }, [])
-
-  // console.log('furniture on state🪑', furniture)
-
   
 
   return (
     <>
       <Container className="header">furniture</Container>
       <Container fluid>
-    
-      
-           
+
         {furniture.map(piece =>{
         
           return <FurnitureCard key={piece.id} {...piece} />

@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-// import axios from 'axios'
 import Home from './components/common/Home'
 import NavBar from './components/common/Navbar'
 import Register from './helpers/auth/Register'

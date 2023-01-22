@@ -9,9 +9,6 @@ from .common import ShowSerializer
 from .populated import PopulatedShowSerializer
 
 
- 
-# Create your views here.
-
 class ShowListView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
      
@@ -21,7 +18,6 @@ class ShowListView(APIView):
         serialized_furniture = PopulatedShowSerializer(furniture, many=True)
         return Response(serialized_furniture.data, status=status.HTTP_200_OK)
 
-
     def post(self, request):
         request.data['owner'] = request.user.id
         furniture_to_add = ShowSerializer(data=request.data)
@@ -29,8 +25,6 @@ class ShowListView(APIView):
             furniture_to_add.save()
             return Response(furniture_to_add.data, status=status.HTTP_201_CREATED)
         return Response(furniture_to_add.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
-
-
 
 class ShowDetailView(APIView):
     permission_classes = (IsAuthenticatedOrReadOnly, )
@@ -40,7 +34,6 @@ class ShowDetailView(APIView):
             return Show.objects.get(pk=pk)
         except Show.DoesNotExist:
             raise NotFound(detail="🐙 Can't find that piece")
-
 
     def get(self, _request, pk):
         furniture_one = self.get_one(pk=pk)
@@ -56,9 +49,7 @@ class ShowDetailView(APIView):
             return Response(updated_piece.data, status=status.HTTP_202_ACCEPTED)
         return Response(updated_piece.errors, status=status.HTTP_422_UNPROCESSABLE_ENTITY)
         
-
     def delete(self, _request, pk):
         piece_to_delete = self.get_one(pk=pk)
         piece_to_delete.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-

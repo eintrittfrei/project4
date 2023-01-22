@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react' 
 import axios from 'axios'
 import { useParams, useHistory } from 'react-router-dom'
-// import Card from 'react-bootstrap/Card'
-// import ListGroupItem from 'react-bootstrap/ListGroupItem'
-// import ListGroup from 'react-bootstrap/ListGroup'
 import Button from 'react-bootstrap/Button'
 import { getTokenFromLocalStorage, getPayload } from '../../helpers/auth/functions'
 import Container from 'react-bootstrap/Container'
@@ -12,9 +9,6 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Link from 'react-bootstrap/NavLink'
 import Figure from 'react-bootstrap/Figure'
-
-
-
 
 
 const FurnitureShow = () => {
@@ -132,10 +126,6 @@ const FurnitureShow = () => {
       </Container>
       
     </>
-       
-        
-
-
 
   )
 

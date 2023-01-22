@@ -111,15 +111,6 @@ const EditForm = ({
           name="image"
           handleImageUrl={handleImageUrl}
         />
-        {/* <Form.Group controlId="formFile" className="mb-3">
-          <Form.Label>Image</Form.Label>
-          <Form.Control 
-            type="file" 
-            name="image" 
-            value={formdata.image}
-            onChange={handleChange} />
-        </Form.Group> */}
-
         <Button className="form_submit" variant="link" type="submit">
       Submit Form
         </Button>{' '}
