@@ -155,6 +155,8 @@ REST_FRAMEWORK = {
 STATIC_URL = '/static/'
 ROOT_URLCONF = 'project.urls'
 
+ALLOWED_HOSTS = ['*']
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "client", "build", "static"),)
 
 django_heroku.settings(locals())
