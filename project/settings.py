@@ -1,3 +1,13 @@
+import django_heroku
+from pathlib import Path
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+
+
+
+
 """
 Django settings for project project.
 
@@ -10,11 +20,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
-from pathlib import Path
-import django_heroku
-from dotenv import load_dotenv
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
