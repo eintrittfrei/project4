@@ -18,10 +18,9 @@ const FurnitureCard = ({ id, name, image }) => {
               <Link href={`/furniture/${id}/`}>
                 <Card.Img height={300}  className='card_image' key={id} variant="top" src={image} />
               </Link>
-              {/* <Card.Body> */}
-              <Card.Title keyt={id}>{name}</Card.Title>
-              {/* <Button href={`/furniture/${id}`} variant="primary">Details</Button> */}
-              {/* </Card.Body> */}
+             
+              <Card.Title key={id}>{name}</Card.Title>
+           
             </Card>
           </Row>
         </Col>

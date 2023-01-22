@@ -1,11 +1,12 @@
 
+@import "~bootstrap/scss/bootstrap";
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 // Nav style
 
 a.navbar-brand {
-  font-family: 'montserrat' sans-serif;
+  font-family: 'montserrat' sans-serif
   }
 nav{
   div.container {
